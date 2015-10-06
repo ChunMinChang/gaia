@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+<!--     <meta name="viewport" content="width=device-width,user-scalable=yes"> -->
+
+    <title>test-hw-keyevent</title>
+
+    <style>
+      body {
+/*         border: 1px solid black; */
+      }
+           
+/*       div.table {
+        display:table;
+      }
+      
+      div.head {
+        display: table-row;
+      }
+      
+      div.row {
+        display: table-row;
+      }
+      
+      div.cell {
+        display: table-cell;
+        padding-right:10px;
+      } */
+      
+      .type {
+        background-color: #C2C2D6;
+      }
+      
+      .dom {
+        background-color: #E0FFE0;
+      }
+      
+      .modifiers {
+        background-color: #FFFFB2;
+      }
+      
+      .deprecated {
+        background-color: #FFB2B2;
+      }
+    </style>
+
+    <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
+         so we use a script file. -->
+    <script src="app.js" defer></script>
+
+  </head>
+
+  <body>
+    <!-- This code is in the public domain. Enjoy! -->
+    <h1>Keyboard Events</h1>
+    
+    Input: <input id="input" size="20" autofocus="" type="text">
+    <button id="reset">Reset</button>
+    <!-- event log table -->
+<!--     <div id="eventslogger" class="table" style="overflow-x:x">
+      <div class="row">
+        <div class="cell">type</div>
+        <div class="cell">phase</div>
+        <div class="cell">target</div>
+        <div class="cell">cur-target</div>
+        <div class="cell">key</div>
+        <div class="cell">code</div>
+        <div class="cell">location</div>
+        <div class="cell">data</div>
+        <div class="cell">repeat</div>
+          
+        <div class="cell">shift</div>
+        <div class="cell">control</div>
+        <div class="cell">alt</div>
+        <div class="cell">meta</div>
+         
+        <div class="cell">keycode</div>
+        <div class="cell">charcode</div>
+      </div>
+    </div>  -->
+    <!-- end: event log table -->
+    
+    <table id="eventslogger">
+      <thead>
+      <tr>
+        <td></td>
+        <td colspan="8" class="dom">DOM 3</td>
+        <td colspan="4" class="modifiers">Modifiers</td>
+        <td colspan="2" class="deprecated">Deprecated</td>
+      </tr>
+      </thead>
+      <thead>
+      <tr>
+        <td class="type">type</td>
+        <td class="dom">phase</td>
+        <td class="dom">target</td>
+        <td class="dom">current-target</td>
+        <td class="dom">key</td>
+        <td class="dom">code</td>
+        <td class="dom">location</td>
+        <td class="dom">data</td>
+        <td class="dom">repeat</td>
+        <td class="modifiers">shift</td>
+        <td class="modifiers">control</td>
+        <td class="modifiers">alt</td>
+        <td class="modifiers">meta</td>
+        <td class="deprecated">keycode</td>
+        <td class="deprecated">charcode</td>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- events will be logged here ... -->
+      </tbody>
+    </table>
+    
+  </body>
+  
+</html>

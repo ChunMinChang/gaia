@@ -33,6 +33,7 @@ dev_apps/theme-test-2
 dev_apps/theme-test-3
 dev_apps/nfc-api-test
 dev_apps/music-nga
+dev_apps/test-hw-keyevent
 apps/settings/test/fixtures/addon1
 apps/settings/test/fixtures/addon2
 apps/settings/test/fixtures/addon3

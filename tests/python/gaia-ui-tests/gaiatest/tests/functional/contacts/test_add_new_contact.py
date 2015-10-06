@@ -7,6 +7,7 @@ from gaiatest import GaiaTestCase
 from gaiatest.mocks.mock_contact import MockContact
 from gaiatest.apps.contacts.app import Contacts
 
+import mozdevice
 
 class TestContacts(GaiaTestCase):
 
@@ -24,6 +25,17 @@ class TestContacts(GaiaTestCase):
 
         # Enter data into fields
         new_contact_form.type_given_name(self.contact['givenName'])
+
+        # To simulate hardware keyboard event
+        #    For emulator: keyboard is event0
+        self.dm = mozdevice.DeviceManagerADB()
+        '''press b'''
+        print '==> press physical key: b'
+        self.dm.shellCheckOutput(['sendevent', 'dev/input/event0','1', '48', '1'])
+        self.dm.shellCheckOutput(['sendevent', 'dev/input/event0','0', '0', '0'])
+        self.dm.shellCheckOutput(['sendevent', 'dev/input/event0','1', '48', '0'])
+        self.dm.shellCheckOutput(['sendevent', 'dev/input/event0','0', '0', '0'])
+
         new_contact_form.type_family_name(self.contact['familyName'])
 
         new_contact_form.type_phone(self.contact['tel']['value'])
